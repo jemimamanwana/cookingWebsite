@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Cuisines | Global Gourmet</title>
+    <title>World Cuisines | Cooking with Jay</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+        </div>
+    </div>
+
     <!-- Navigation (same as index.html) -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="index.html" class="logo">
                 <i class="fas fa-utensils"></i>
-                <span>Global Gourmet</span>
+                <span>Cooking with Jay</span>
             </a>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -27,6 +36,7 @@
                 <li class="nav-item"><a href="cuisines.html" class="nav-link active">Cuisines</a></li>
                 <li class="nav-item"><a href="cookbook.html" class="nav-link">My Cookbook</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 <li class="nav-item search-item">
                     <div class="search-container">
                         <input type="text" placeholder="Search cuisines..." class="search-input" id="cuisine-search">
@@ -185,46 +195,46 @@
         </div>
         <div class="regions-grid">
             <div class="region-card" data-region="asia">
-                <div class="region-image" style="background-image: url('https://source.unsplash.com/random/800x600/?asia,food')">
+                <div class="region-image" style="background-image: url('sushi.jpeg')">
                     <div class="region-overlay"></div>
                     <h3>Asian Cuisines</h3>
                 </div>
                 <div class="region-stats">
-                    <span>8 Cuisines</span>
-                    <span>64 Recipes</span>
+                    <span>5 Cuisines</span>
+                    <span>110 Recipes</span>
                     <a href="#" class="btn btn-region">Explore</a>
                 </div>
             </div>
             <div class="region-card" data-region="europe">
-                <div class="region-image" style="background-image: url('https://source.unsplash.com/random/800x600/?europe,food')">
+                <div class="region-image" style="background-image: url('pizza.jpg')">
                     <div class="region-overlay"></div>
                     <h3>European Cuisines</h3>
                 </div>
                 <div class="region-stats">
-                    <span>6 Cuisines</span>
-                    <span>48 Recipes</span>
+                    <span>4 Cuisines</span>
+                    <span>100 Recipes</span>
                     <a href="#" class="btn btn-region">Explore</a>
                 </div>
             </div>
             <div class="region-card" data-region="africa">
-                <div class="region-image" style="background-image: url('https://source.unsplash.com/random/800x600/?africa,food')">
+                <div class="region-image" style="background-image: url('https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=800&h=600&fit=crop')">
                     <div class="region-overlay"></div>
                     <h3>African Cuisines</h3>
                 </div>
                 <div class="region-stats">
-                    <span>5 Cuisines</span>
-                    <span>32 Recipes</span>
+                    <span>2 Cuisines</span>
+                    <span>30 Recipes</span>
                     <a href="#" class="btn btn-region">Explore</a>
                 </div>
             </div>
             <div class="region-card" data-region="americas">
-                <div class="region-image" style="background-image: url('https://source.unsplash.com/random/800x600/?america,food')">
+                <div class="region-image" style="background-image: url('chickenTacos.jpg')">
                     <div class="region-overlay"></div>
                     <h3>American Cuisines</h3>
                 </div>
                 <div class="region-stats">
-                    <span>7 Cuisines</span>
-                    <span>56 Recipes</span>
+                    <span>1 Cuisine</span>
+                    <span>25 Recipes</span>
                     <a href="#" class="btn btn-region">Explore</a>
                 </div>
             </div>
@@ -242,10 +252,45 @@
         </div>
     </div>
 
-    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
     <footer class="footer">
-        <!-- Footer content from index.html -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cooking With Jay</span>
+                </a>
+                <p>Bringing the world's flavors to your kitchen</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="recipes.html">All Recipes</a></li>
+                        <li><a href="cuisines.html">By Cuisine</a></li>
+                        <li><a href="cookbook.html">My Cookbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Cooking With Jay<br>By Jemima Manwana. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
     <script src="cuisines.js"></script>

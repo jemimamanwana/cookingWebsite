@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Collection | Global Gourmet</title>
+    <title>Recipe Collection | Cooking with Jay</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+        </div>
+    </div>
+
     <!-- Navigation (same as index.html) -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="index.html" class="logo">
                 <i class="fas fa-utensils"></i>
-                <span>Global Gourmet</span>
+                <span>Cooking with Jay</span>
             </a>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -27,6 +36,7 @@
                 <li class="nav-item"><a href="cuisines.html" class="nav-link">Cuisines</a></li>
                 <li class="nav-item"><a href="cookbook.html" class="nav-link">My Cookbook</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 <li class="nav-item search-item">
                     <div class="search-container">
                         <input type="text" placeholder="Search recipes..." class="search-input" id="search-input">
@@ -38,7 +48,7 @@
     </nav>
 
     <!-- Recipe Hero Section -->
-    <header class="recipe-hero">
+    <header class="recipe-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%), url('food.jpg');">
         <div class="recipe-hero-content">
             <h1>Explore Our Recipe Collection</h1>
             <p>Discover delicious dishes from every corner of the world</p>
@@ -155,7 +165,7 @@
                 </div>
                 <p id="rotd-description">A vibrant and aromatic curry with coconut milk, fresh vegetables, and your choice of protein. This authentic Thai dish balances spicy, sweet, and savory flavors perfectly.</p>
                 <div class="rotd-actions">
-                    <a href="recipe-detail.html" class="btn btn-primary">View Recipe</a>
+                    <a href="recipes.html" class="btn btn-primary">View Recipe</a>
                     <button class="btn btn-secondary save-recipe">
                         <i class="far fa-bookmark"></i> Save
                     </button>
@@ -172,27 +182,65 @@
         </div>
         <div class="seasonal-grid">
             <div class="seasonal-card">
-                <div class="seasonal-image" style="background-image: url('https://source.unsplash.com/random/600x400/?summer,grill')"></div>
+                <div class="seasonal-image" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop')"></div>
                 <div class="seasonal-content">
                     <h3>Summer BBQ Collection</h3>
                     <p>Perfect grilled dishes for your outdoor gatherings</p>
-                    <a href="seasonal.html" class="btn btn-secondary">Explore</a>
+                    <a href="recipes.html" class="btn btn-secondary">Explore</a>
                 </div>
             </div>
             <div class="seasonal-card">
-                <div class="seasonal-image" style="background-image: url('https://source.unsplash.com/random/600x400/?summer,drink')"></div>
+                <div class="seasonal-image" style="background-image: url('coffe.jpg')"></div>
                 <div class="seasonal-content">
-                    <h3>Refreshing Summer Drinks</h3>
-                    <p>Cool down with these delicious beverages</p>
-                    <a href="seasonal.html" class="btn btn-secondary">Explore</a>
+                    <h3>Cozy Warm Drinks</h3>
+                    <p>Perfect beverages for any time of the day</p>
+                    <a href="recipes.html" class="btn btn-secondary">Explore</a>
+                </div>
+            </div>
+            <div class="seasonal-card">
+                <div class="seasonal-image" style="background-image: url('Breakfast.webp')"></div>
+                <div class="seasonal-content">
+                    <h3>Brunch Favorites</h3>
+                    <p>Start your weekend with these delicious recipes</p>
+                    <a href="recipes.html" class="btn btn-secondary">Explore</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
     <footer class="footer">
-        <!-- Footer content from index.html -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cooking With Jay</span>
+                </a>
+                <p>Bringing the world's flavors to your kitchen</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="recipes.html">All Recipes</a></li>
+                        <li><a href="cuisines.html">By Cuisine</a></li>
+                        <li><a href="cookbook.html">My Cookbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Cooking With Jay<br>By Jemima Manwana. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Recipe Quick View Modal -->
@@ -207,11 +255,8 @@
                     <span><i class="fas fa-utensils"></i> <span id="quick-view-difficulty">Easy</span></span>
                     <span><i class="fas fa-globe-americas"></i> <span id="quick-view-cuisine">Italian</span></span>
                 </div>
-                <div class="quick-view-description" id="quick-view-description">
-                    <!-- Description will be inserted here -->
-                </div>
+                <div class="quick-view-description" id="quick-view-description"></div>
                 <div class="quick-view-actions">
-                    <a href="recipe-detail.html" class="btn btn-primary">Full Recipe</a>
                     <button class="btn btn-secondary" id="quick-view-save">
                         <i class="far fa-bookmark"></i> Save
                     </button>
@@ -219,6 +264,52 @@
             </div>
         </div>
     </div>
+
+    <!-- Full Recipe Detail Modal -->
+    <div class="modal" id="recipe-detail-modal">
+        <div class="modal-content recipe-detail-content">
+            <button class="modal-close" id="recipe-detail-close">&times;</button>
+            <div class="recipe-detail-hero" id="recipe-detail-hero">
+                <div class="recipe-detail-hero-overlay"></div>
+                <div class="recipe-detail-hero-info">
+                    <div class="recipe-detail-tag" id="recipe-detail-tag">Italian</div>
+                    <h1 id="recipe-detail-title">Recipe Title</h1>
+                    <div class="recipe-detail-meta">
+                        <span><i class="fas fa-clock"></i> <span id="recipe-detail-time">30 mins</span></span>
+                        <span><i class="fas fa-utensils"></i> <span id="recipe-detail-difficulty">Easy</span></span>
+                        <span><i class="fas fa-star"></i> <span id="recipe-detail-rating">4.5</span></span>
+                        <span><i class="fas fa-comment"></i> <span id="recipe-detail-reviews">128</span> reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-detail-body">
+                <p class="recipe-detail-description" id="recipe-detail-description"></p>
+                <div class="recipe-detail-columns">
+                    <div class="recipe-detail-ingredients">
+                        <h3><i class="fas fa-list"></i> Ingredients</h3>
+                        <ul id="recipe-detail-ingredients"></ul>
+                    </div>
+                    <div class="recipe-detail-instructions">
+                        <h3><i class="fas fa-clipboard-list"></i> Instructions</h3>
+                        <ol id="recipe-detail-instructions"></ol>
+                    </div>
+                </div>
+                <div class="recipe-detail-actions">
+                    <button class="btn btn-primary" id="recipe-detail-save">
+                        <i class="far fa-bookmark"></i> Save to Cookbook
+                    </button>
+                    <button class="btn btn-secondary" id="recipe-detail-print" onclick="window.print()">
+                        <i class="fas fa-print"></i> Print Recipe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
     <script src="recipes.js"></script>

@@ -1,204 +1,196 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Sample cuisine data with AI-generated images
+    // Cuisine data with real food images
     const cuisines = [
         {
             id: 1,
             name: "Italian",
-            image: "https://source.unsplash.com/random/800x600/?italian,food",
+            image: "pizza2.jpg",
             region: "europe",
-            description: "Italian cuisine is characterized by its simplicity, with many dishes having only four to eight ingredients. Italian cooks rely chiefly on the quality of the ingredients rather than on elaborate preparation.",
+            description: "Italian cuisine is a celebration of simplicity and quality. With just a handful of fresh, seasonal ingredients, Italian cooks create dishes that are deeply flavorful — from hand-rolled pasta to wood-fired pizza and creamy risotto.",
             recipes: 32,
             rating: 4.8,
             popular: true,
-            signatureDishes: ["Pasta Carbonara", "Margherita Pizza", "Risotto", "Tiramisu", "Osso Buco"],
+            signatureDishes: ["Pasta Carbonara", "Margherita Pizza", "Risotto alla Milanese", "Tiramisu", "Osso Buco"],
             techniques: [
-                {
-                    name: "Pasta Making",
-                    description: "The art of creating fresh pasta from flour and eggs"
-                },
-                {
-                    name: "Risotto Stirring",
-                    description: "Constant stirring to release starches for creamy texture"
-                },
-                {
-                    name: "Wood-Fired Cooking",
-                    description: "Traditional method using wood-fired ovens for pizza and bread"
-                }
+                { name: "Fresh Pasta Making", description: "The art of creating silky pasta from flour, eggs, and olive oil — rolled thin and cut to shape" },
+                { name: "Risotto Stirring", description: "Constant stirring to coax starch from Arborio rice for an impossibly creamy texture" },
+                { name: "Wood-Fired Cooking", description: "Neapolitan-style cooking in 900°F ovens that char pizza in 90 seconds" }
             ]
         },
         {
             id: 2,
             name: "Japanese",
-            image: "https://source.unsplash.com/random/800x600/?japanese,food",
+            image: "sushi.jpeg",
             region: "asia",
-            description: "Japanese cuisine encompasses the regional and traditional foods of Japan, which have developed through centuries of political, economic, and social changes.",
+            description: "Japanese cuisine is an art form where precision meets philosophy. Every dish balances the five flavors and five colors, honoring seasonality and the natural beauty of ingredients.",
             recipes: 28,
             rating: 4.7,
             popular: true,
-            signatureDishes: ["Sushi", "Ramen", "Tempura", "Sashimi", "Miso Soup"],
+            signatureDishes: ["Sushi & Sashimi", "Tonkotsu Ramen", "Tempura", "Wagyu Beef", "Miso Soup"],
             techniques: [
-                {
-                    name: "Sushi Rolling",
-                    description: "Precision technique for making perfect sushi rolls"
-                },
-                {
-                    name: "Tempura Frying",
-                    description: "Light batter frying for crisp texture"
-                },
-                {
-                    name: "Dashi Preparation",
-                    description: "Creating the essential umami broth"
-                }
+                { name: "Sushi Craftsmanship", description: "Years of training to perfect rice seasoning, fish slicing, and hand-forming nigiri" },
+                { name: "Tempura Frying", description: "Ice-cold batter meets hot oil for an impossibly light, shatteringly crisp coating" },
+                { name: "Dashi Making", description: "Extracting pure umami from kombu and bonito flakes — the soul of Japanese cooking" }
             ]
         },
         {
             id: 3,
             name: "Mexican",
-            image: "https://source.unsplash.com/random/800x600/?mexican,food",
+            image: "chickenTacos.jpg",
             region: "americas",
-            description: "Mexican cuisine is primarily a fusion of indigenous Mesoamerican cooking with European, especially Spanish, elements added after the Spanish conquest.",
+            description: "Mexican cuisine is a UNESCO-recognized cultural treasure. Ancient Aztec and Mayan techniques merge with Spanish influences to create bold, complex flavors built on corn, chili, and chocolate.",
             recipes: 25,
             rating: 4.5,
             popular: true,
-            signatureDishes: ["Tacos al Pastor", "Mole Poblano", "Chiles en Nogada", "Tamales", "Guacamole"],
+            signatureDishes: ["Tacos al Pastor", "Mole Poblano", "Chiles en Nogada", "Tamales", "Elote"],
             techniques: [
-                {
-                    name: "Nixtamalization",
-                    description: "Process for preparing maize (corn)"
-                },
-                {
-                    name: "Mole Preparation",
-                    description: "Complex sauce making with multiple ingredients"
-                },
-                {
-                    name: "Tortilla Pressing",
-                    description: "Traditional method for making corn tortillas"
-                }
+                { name: "Nixtamalization", description: "Ancient process of treating corn with lime water to create masa — the foundation of tortillas and tamales" },
+                { name: "Mole Preparation", description: "A labor of love — toasting and grinding 20+ ingredients into a deeply complex sauce" },
+                { name: "Tortilla Pressing", description: "Hand-pressing fresh masa into thin rounds and cooking on a hot comal" }
             ]
         },
         {
             id: 4,
             name: "Indian",
-            image: "https://source.unsplash.com/random/800x600/?indian,food",
+            image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop",
             region: "asia",
-            description: "Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent, influenced by cultural choices and traditions.",
+            description: "Indian cuisine is a symphony of spices. From fiery curries of the south to rich, creamy dishes of the north, the subcontinent's diverse regions offer a staggering range of flavors and traditions.",
             recipes: 36,
             rating: 4.6,
             popular: true,
-            signatureDishes: ["Butter Chicken", "Biryani", "Masala Dosa", "Rogan Josh", "Palak Paneer"],
+            signatureDishes: ["Butter Chicken", "Hyderabadi Biryani", "Masala Dosa", "Rogan Josh", "Palak Paneer"],
             techniques: [
-                {
-                    name: "Tandoor Cooking",
-                    description: "Clay oven cooking method"
-                },
-                {
-                    name: "Tempering Spices",
-                    description: "Blooming spices in hot oil"
-                },
-                {
-                    name: "Dum Cooking",
-                    description: "Slow cooking in sealed pots"
-                }
+                { name: "Tandoor Cooking", description: "Intense clay oven heat that chars naan bread and infuses meats with smoky flavor" },
+                { name: "Tempering (Tadka)", description: "Blooming whole spices in hot ghee to release essential oils and aroma" },
+                { name: "Dum Cooking", description: "Sealing a pot with dough and slow-cooking over embers for hours of concentrated flavor" }
             ]
         },
         {
             id: 5,
             name: "French",
-            image: "https://source.unsplash.com/random/800x600/?french,food",
+            image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop",
             region: "europe",
-            description: "French cuisine consists of the cooking traditions and practices from France, known for its techniques and focus on quality ingredients.",
+            description: "French cuisine is the gold standard of the culinary world. Built on classical techniques perfected over centuries, it ranges from rustic country cooking to the heights of Michelin-starred gastronomy.",
             recipes: 30,
             rating: 4.7,
             popular: true,
-            signatureDishes: ["Coq au Vin", "Bouillabaisse", "Ratatouille", "Croissant", "Crème Brûlée"],
+            signatureDishes: ["Coq au Vin", "Bouillabaisse", "Ratatouille", "Croissants", "Crème Brûlée"],
             techniques: [
-                {
-                    name: "Sous Vide",
-                    description: "Precision temperature cooking"
-                },
-                {
-                    name: "Flambé",
-                    description: "Cooking with ignited alcohol"
-                },
-                {
-                    name: "Pâtisserie",
-                    description: "Art of French pastry making"
-                }
+                { name: "Sous Vide", description: "Precision temperature cooking in vacuum-sealed bags for perfect doneness every time" },
+                { name: "Flambé", description: "Igniting alcohol to caramelize sugars and add dramatic depth of flavor" },
+                { name: "Pâtisserie", description: "The exacting art of French pastry — laminated doughs, choux, and delicate confections" }
             ]
         },
         {
             id: 6,
             name: "Thai",
-            image: "https://source.unsplash.com/random/800x600/?thai,food",
+            image: "padThai.jpg",
             region: "asia",
-            description: "Thai cuisine is the national cuisine of Thailand, known for its balance of five fundamental flavors in each dish: spicy, sweet, sour, bitter, and salty.",
+            description: "Thai cuisine is all about balance — every dish harmonizes spicy, sweet, sour, salty, and bitter. Fresh herbs, aromatic pastes, and bold flavors make Thai food unforgettable.",
             recipes: 22,
             rating: 4.4,
             popular: false,
-            signatureDishes: ["Pad Thai", "Tom Yum Goong", "Green Curry", "Som Tum", "Mango Sticky Rice"],
+            signatureDishes: ["Pad Thai", "Tom Yum Goong", "Green Curry", "Som Tum Papaya Salad", "Mango Sticky Rice"],
             techniques: [
-                {
-                    name: "Curry Paste Grinding",
-                    description: "Traditional mortar and pestle technique"
-                },
-                {
-                    name: "Stir-Frying",
-                    description: "Quick cooking over high heat"
-                },
-                {
-                    name: "Herb Balancing",
-                    description: "Creating flavor harmony with fresh herbs"
-                }
+                { name: "Curry Paste Grinding", description: "Pounding fresh herbs and spices in a granite mortar for intensely aromatic pastes" },
+                { name: "Wok Stir-Frying", description: "Lightning-fast cooking over extreme heat for smoky wok hei flavor" },
+                { name: "Flavor Balancing", description: "The Thai art of adjusting sweet, sour, salty, and spicy until a dish sings" }
             ]
         },
         {
             id: 7,
             name: "Greek",
-            image: "https://source.unsplash.com/random/800x600/?greek,food",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop",
             region: "europe",
-            description: "Greek cuisine is a Mediterranean cuisine, sharing characteristics with the cuisines of Italy, the Balkans, Turkey, and the Levant.",
+            description: "Greek cuisine is Mediterranean cooking at its finest — sun-drenched vegetables, briny olives, tangy feta, and golden olive oil. Simple ingredients elevated by time-honored traditions.",
             recipes: 18,
             rating: 4.3,
             popular: false,
             signatureDishes: ["Moussaka", "Souvlaki", "Spanakopita", "Tzatziki", "Baklava"],
             techniques: [
-                {
-                    name: "Phyllo Handling",
-                    description: "Working with ultra-thin dough sheets"
-                },
-                {
-                    name: "Grilling",
-                    description: "Traditional charcoal grilling methods"
-                },
-                {
-                    name: "Olive Oil Infusing",
-                    description: "Creating flavored olive oils"
-                }
+                { name: "Phyllo Handling", description: "Working with paper-thin dough layers brushed with butter for flaky pastries" },
+                { name: "Charcoal Grilling", description: "Traditional souvlaki grilling over hot coals for smoky, juicy meat" },
+                { name: "Olive Oil Mastery", description: "Knowing when to use delicate early-harvest vs. robust late-harvest oils" }
             ]
         },
         {
             id: 8,
             name: "Lebanese",
-            image: "https://source.unsplash.com/random/800x600/?lebanese,food",
+            image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=800&h=600&fit=crop",
             region: "middle-east",
-            description: "Lebanese cuisine is the culinary traditions and practices originating from Lebanon, known for its variety of vegetarian dishes and use of fresh ingredients.",
+            description: "Lebanese cuisine is the jewel of Middle Eastern cooking. Generous mezze spreads, fragrant spice blends, and an emphasis on fresh vegetables and grains make it both healthy and deeply satisfying.",
             recipes: 20,
             rating: 4.2,
             popular: false,
-            signatureDishes: ["Hummus", "Falafel", "Tabbouleh", "Shawarma", "Baklava"],
+            signatureDishes: ["Hummus", "Falafel", "Tabbouleh", "Shawarma", "Kibbeh"],
             techniques: [
-                {
-                    name: "Mezze Preparation",
-                    description: "Creating small flavorful dishes"
-                },
-                {
-                    name: "Spice Blending",
-                    description: "Traditional spice combinations"
-                },
-                {
-                    name: "Flatbread Baking",
-                    description: "Making traditional Lebanese bread"
-                }
+                { name: "Mezze Preparation", description: "Creating an abundant spread of small, flavorful dishes for communal dining" },
+                { name: "Spice Blending", description: "Crafting za'atar, baharat, and seven-spice mixes from freshly ground ingredients" },
+                { name: "Flatbread Baking", description: "Stretching and baking traditional Lebanese bread in a saj oven" }
+            ]
+        },
+        {
+            id: 9,
+            name: "Korean",
+            image: "https://images.unsplash.com/photo-1553163147-622ab57be1c7?w=800&h=600&fit=crop",
+            region: "asia",
+            description: "Korean cuisine is bold, fermented, and fiery. From the national obsession with kimchi to sizzling Korean BBQ and comforting stews, it's a cuisine built on deep umami and community dining.",
+            recipes: 24,
+            rating: 4.5,
+            popular: true,
+            signatureDishes: ["Korean BBQ", "Bibimbap", "Kimchi Jjigae", "Japchae", "Tteokbokki"],
+            techniques: [
+                { name: "Fermentation", description: "The ancient art of making kimchi, doenjang, and gochujang — months of patient transformation" },
+                { name: "Tableside Grilling", description: "Social dining around a grill, wrapping grilled meats in lettuce with ssamjang" },
+                { name: "Banchan Making", description: "Preparing the array of small side dishes that accompany every Korean meal" }
+            ]
+        },
+        {
+            id: 10,
+            name: "West African",
+            image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=800&h=600&fit=crop",
+            region: "africa",
+            description: "West African cuisine is rich, hearty, and deeply flavorful. Built on starchy staples, slow-cooked stews, and bold spice combinations, it's one of the world's most underappreciated culinary traditions.",
+            recipes: 16,
+            rating: 4.4,
+            popular: false,
+            signatureDishes: ["Jollof Rice", "Egusi Soup", "Suya", "Fufu & Light Soup", "Chin Chin"],
+            techniques: [
+                { name: "One-Pot Cooking", description: "Building layers of flavor in a single pot — the foundation of West African stews" },
+                { name: "Pepper Grinding", description: "Blending fresh chilies, tomatoes, and onions into the holy trinity of West African cooking" },
+                { name: "Suya Spicing", description: "Coating skewered meat in ground peanut and spice mix before grilling over coals" }
+            ]
+        },
+        {
+            id: 11,
+            name: "Spanish",
+            image: "https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=800&h=600&fit=crop",
+            region: "europe",
+            description: "Spanish cuisine celebrates the joy of eating together. From bustling tapas bars to saffron-scented paellas cooked over open flames, it's a cuisine built on passion, quality ingredients, and conviviality.",
+            recipes: 20,
+            rating: 4.5,
+            popular: false,
+            signatureDishes: ["Paella Valenciana", "Patatas Bravas", "Gazpacho", "Jamón Ibérico", "Churros con Chocolate"],
+            techniques: [
+                { name: "Paella Making", description: "Building the perfect socarrat — the prized crispy rice crust at the bottom of the pan" },
+                { name: "Tapas Culture", description: "Creating small, shareable plates that encourage social dining and variety" },
+                { name: "Jamón Carving", description: "The skilled art of hand-slicing cured ham paper-thin for maximum flavor" }
+            ]
+        },
+        {
+            id: 12,
+            name: "Moroccan",
+            image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=800&h=600&fit=crop",
+            region: "africa",
+            description: "Moroccan cuisine is an intoxicating blend of Arab, Berber, and Mediterranean influences. Fragrant tagines, fluffy couscous, and the magical ras el hanout spice blend define this enchanting culinary tradition.",
+            recipes: 14,
+            rating: 4.3,
+            popular: false,
+            signatureDishes: ["Chicken Tagine", "Couscous Royale", "Harira Soup", "Pastilla", "Mint Tea"],
+            techniques: [
+                { name: "Tagine Cooking", description: "Slow-braising in a conical clay pot that traps steam and concentrates flavors" },
+                { name: "Couscous Steaming", description: "Hand-rolling semolina and steaming it three times for impossibly light, fluffy grains" },
+                { name: "Spice Toasting", description: "Dry-toasting and grinding whole spices for the complex ras el hanout blend" }
             ]
         }
     ];
@@ -239,34 +231,31 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayCuisines() {
         cuisinesGrid.innerHTML = '';
         loadingSpinner.classList.add('active');
-        
-        // Simulate loading delay
+
         setTimeout(() => {
             loadingSpinner.classList.remove('active');
-            
+
             const searchTerm = cuisineSearch.value.toLowerCase();
             const regionValue = regionFilter.value;
             const popularityValue = popularityFilter.value;
-            
+
             let filtered = [...cuisines];
-            
-            // Apply search filter
+
             if (searchTerm) {
-                filtered = filtered.filter(cuisine => 
-                    cuisine.name.toLowerCase().includes(searchTerm) || 
-                    cuisine.description.toLowerCase().includes(searchTerm)
+                filtered = filtered.filter(cuisine =>
+                    cuisine.name.toLowerCase().includes(searchTerm) ||
+                    cuisine.description.toLowerCase().includes(searchTerm) ||
+                    cuisine.signatureDishes.some(d => d.toLowerCase().includes(searchTerm))
                 );
             }
-            
-            // Apply region filter
+
             if (regionValue !== 'all') {
                 filtered = filtered.filter(cuisine => cuisine.region === regionValue);
             }
-            
-            // Apply popularity filter
+
             switch(popularityValue) {
                 case 'popular':
-                    filtered = filtered.filter(cuisine => cuisine.popular);
+                    filtered.sort((a, b) => b.popular - a.popular || b.rating - a.rating);
                     break;
                 case 'a-z':
                     filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -277,25 +266,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'recipes':
                     filtered.sort((a, b) => b.recipes - a.recipes);
                     break;
-                default:
-                    // Default sorting (by popularity)
-                    filtered.sort((a, b) => b.popular - a.popular || b.rating - a.rating);
             }
-            
+
             if (filtered.length === 0) {
                 noResults.classList.add('active');
                 cuisinesGrid.style.display = 'none';
             } else {
                 noResults.classList.remove('active');
                 cuisinesGrid.style.display = 'grid';
-                
-                filtered.forEach(cuisine => {
+
+                filtered.forEach((cuisine, index) => {
                     const cuisineCard = document.createElement('div');
                     cuisineCard.className = 'cuisine-card';
+                    cuisineCard.style.animationDelay = `${index * 0.1}s`;
                     cuisineCard.innerHTML = `
                         <div class="cuisine-image" style="background-image: url('${cuisine.image}')">
                             <div class="cuisine-overlay"></div>
                             <h3>${cuisine.name}</h3>
+                            <div class="cuisine-region-badge">${formatRegion(cuisine.region)}</div>
                         </div>
                         <div class="cuisine-info">
                             <div class="cuisine-meta">
@@ -303,6 +291,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <span><i class="fas fa-star"></i> ${cuisine.rating}/5</span>
                             </div>
                             <p class="cuisine-description">${cuisine.description}</p>
+                            <div class="cuisine-dishes">
+                                ${cuisine.signatureDishes.slice(0, 3).map(d => `<span class="dish-tag">${d}</span>`).join('')}
+                            </div>
                             <div class="cuisine-actions">
                                 <a href="recipes.html?cuisine=${cuisine.name.toLowerCase()}" class="btn btn-cuisine btn-view-recipes">View Recipes</a>
                                 <button class="btn btn-cuisine btn-learn-more" data-id="${cuisine.id}">Learn More</button>
@@ -312,196 +303,141 @@ document.addEventListener('DOMContentLoaded', function() {
                     cuisinesGrid.appendChild(cuisineCard);
                 });
             }
-        }, 800);
+        }, 600);
+    }
+
+    function formatRegion(region) {
+        if (region === 'middle-east') return 'Middle East';
+        return region.charAt(0).toUpperCase() + region.slice(1);
     }
 
     // Setup cuisine spotlight
     function setupSpotlight() {
-        // Get a popular cuisine
         const spotlightCuisine = cuisines.find(c => c.popular) || cuisines[0];
-        
-        spotlightImage.style.backgroundImage = `url('${spotlightCuisine.image}')`;
-        spotlightTitle.textContent = `${spotlightCuisine.name} Cuisine`;
-        
-        // Format region name
-        const regionName = spotlightCuisine.region === 'middle-east' ? 'Middle East' : 
-                          spotlightCuisine.region.charAt(0).toUpperCase() + spotlightCuisine.region.slice(1);
-        spotlightRegion.textContent = regionName;
-        
-        spotlightRecipes.textContent = spotlightCuisine.recipes;
-        spotlightRating.textContent = spotlightCuisine.rating;
-        spotlightDescription.textContent = spotlightCuisine.description;
-        
-        // Add signature dishes
+        updateSpotlight(spotlightCuisine);
+    }
+
+    function updateSpotlight(cuisine) {
+        spotlightImage.style.backgroundImage = `url('${cuisine.image}')`;
+        spotlightTitle.textContent = `${cuisine.name} Cuisine`;
+        spotlightRegion.textContent = formatRegion(cuisine.region);
+        spotlightRecipes.textContent = cuisine.recipes;
+        spotlightRating.textContent = cuisine.rating;
+        spotlightDescription.textContent = cuisine.description;
+
         signatureDishes.innerHTML = '';
-        spotlightCuisine.signatureDishes.forEach(dish => {
+        cuisine.signatureDishes.forEach(dish => {
             const dishElement = document.createElement('span');
             dishElement.className = 'signature-dish';
             dishElement.textContent = dish;
             signatureDishes.appendChild(dishElement);
         });
-        
-        // Set techniques button
-        exploreTechniques.dataset.id = spotlightCuisine.id;
-        exploreTechniques.dataset.cuisine = spotlightCuisine.name;
+
+        exploreTechniques.dataset.id = cuisine.id;
+        exploreTechniques.dataset.cuisine = cuisine.name;
     }
 
     // Show techniques modal
     function showTechniques(id) {
         const cuisine = cuisines.find(c => c.id === id);
         if (!cuisine) return;
-        
+
         techniquesCuisine.textContent = `${cuisine.name} Cooking Techniques`;
         techniquesGrid.innerHTML = '';
-        
+
         cuisine.techniques.forEach(tech => {
             const techCard = document.createElement('div');
             techCard.className = 'technique-card';
             techCard.innerHTML = `
+                <div class="technique-icon"><i class="fas fa-mortar-pestle"></i></div>
                 <h4>${tech.name}</h4>
                 <p>${tech.description}</p>
             `;
             techniquesGrid.appendChild(techCard);
         });
-        
+
         techniquesModal.classList.add('active');
     }
 
     // Update stats
     function updateStats() {
         totalCuisines.textContent = cuisines.length;
-        
-        // Calculate total recipes
         const totalRecipesCount = cuisines.reduce((sum, cuisine) => sum + cuisine.recipes, 0);
         totalRecipes.textContent = totalRecipesCount;
-        
-        // Calculate unique countries (simplified)
-        totalCountries.textContent = 24; // This would be dynamic in a real app
+        totalCountries.textContent = cuisines.length + 12;
     }
 
     // Setup event listeners
     function setupEventListeners() {
-        // Filter events
         cuisineSearch.addEventListener('input', displayCuisines);
         regionFilter.addEventListener('change', displayCuisines);
         popularityFilter.addEventListener('change', displayCuisines);
-        
-        // Reset filters
-        resetFiltersBtn.addEventListener('click', resetFilters);
-        resetFiltersBtnAlt.addEventListener('click', resetFilters);
-        
+
+        resetFiltersBtn.addEventListener('click', resetFiltersFunc);
+        if (resetFiltersBtnAlt) resetFiltersBtnAlt.addEventListener('click', resetFiltersFunc);
+
         // Learn more buttons
         cuisinesGrid.addEventListener('click', (e) => {
             if (e.target.classList.contains('btn-learn-more') || e.target.closest('.btn-learn-more')) {
                 const btn = e.target.classList.contains('btn-learn-more') ? e.target : e.target.closest('.btn-learn-more');
                 const cuisineId = parseInt(btn.dataset.id);
                 const cuisine = cuisines.find(c => c.id === cuisineId);
-                
+
                 if (cuisine) {
-                    // Update spotlight
-                    spotlightImage.style.backgroundImage = `url('${cuisine.image}')`;
-                    spotlightTitle.textContent = `${cuisine.name} Cuisine`;
-                    
-                    // Format region name
-                    const regionName = cuisine.region === 'middle-east' ? 'Middle East' : 
-                                      cuisine.region.charAt(0).toUpperCase() + cuisine.region.slice(1);
-                    spotlightRegion.textContent = regionName;
-                    
-                    spotlightRecipes.textContent = cuisine.recipes;
-                    spotlightRating.textContent = cuisine.rating;
-                    spotlightDescription.textContent = cuisine.description;
-                    
-                    // Update signature dishes
-                    signatureDishes.innerHTML = '';
-                    cuisine.signatureDishes.forEach(dish => {
-                        const dishElement = document.createElement('span');
-                        dishElement.className = 'signature-dish';
-                        dishElement.textContent = dish;
-                        signatureDishes.appendChild(dishElement);
-                    });
-                    
-                    // Update techniques button
-                    exploreTechniques.dataset.id = cuisine.id;
-                    exploreTechniques.dataset.cuisine = cuisine.name;
-                    
-                    // Scroll to spotlight
-                    document.querySelector('.cuisine-spotlight').scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    updateSpotlight(cuisine);
+                    document.querySelector('.cuisine-spotlight').scrollIntoView({ behavior: 'smooth' });
                 }
             }
         });
-        
+
         // Explore techniques button
         exploreTechniques.addEventListener('click', function() {
             const cuisineId = parseInt(this.dataset.id);
             showTechniques(cuisineId);
         });
-        
-        // Map marker hover
+
+        // Map marker click
         document.querySelectorAll('.map-marker').forEach(marker => {
             marker.addEventListener('click', function() {
                 const cuisineName = this.dataset.cuisine;
                 const cuisine = cuisines.find(c => c.name.toLowerCase() === cuisineName);
-                
+
                 if (cuisine) {
-                    // Update spotlight
-                    spotlightImage.style.backgroundImage = `url('${cuisine.image}')`;
-                    spotlightTitle.textContent = `${cuisine.name} Cuisine`;
-                    
-                    // Format region name
-                    const regionName = cuisine.region === 'middle-east' ? 'Middle East' : 
-                                      cuisine.region.charAt(0).toUpperCase() + cuisine.region.slice(1);
-                    spotlightRegion.textContent = regionName;
-                    
-                    spotlightRecipes.textContent = cuisine.recipes;
-                    spotlightRating.textContent = cuisine.rating;
-                    spotlightDescription.textContent = cuisine.description;
-                    
-                    // Update signature dishes
-                    signatureDishes.innerHTML = '';
-                    cuisine.signatureDishes.forEach(dish => {
-                        const dishElement = document.createElement('span');
-                        dishElement.className = 'signature-dish';
-                        dishElement.textContent = dish;
-                        signatureDishes.appendChild(dishElement);
-                    });
-                    
-                    // Update techniques button
-                    exploreTechniques.dataset.id = cuisine.id;
-                    exploreTechniques.dataset.cuisine = cuisine.name;
-                    
-                    // Scroll to spotlight
-                    document.querySelector('.cuisine-spotlight').scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    updateSpotlight(cuisine);
+                    document.querySelector('.cuisine-spotlight').scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
-        
-        // Close modal when clicking outside
+
+        // Close modal
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal')) {
                 e.target.classList.remove('active');
             }
         });
-        
-        // Close modal with escape key
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 techniquesModal.classList.remove('active');
             }
         });
+
+        const modalClose = techniquesModal.querySelector('.modal-close');
+        if (modalClose) {
+            modalClose.addEventListener('click', () => {
+                techniquesModal.classList.remove('active');
+            });
+        }
     }
 
     // Reset all filters
-    function resetFilters() {
+    function resetFiltersFunc() {
         cuisineSearch.value = '';
         regionFilter.value = 'all';
         popularityFilter.value = 'popular';
         displayCuisines();
     }
 
-    // Initialize the page
+    // Initialize
     init();
 });

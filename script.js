@@ -50,20 +50,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Back to Top Button
     const backToTopBtn = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
-
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
         });
-    });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Recipe Carousel Navigation
     const recipeCarousel = document.querySelector('.recipe-carousel');
@@ -100,14 +102,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.classList.contains('saved')) {
                 icon.classList.remove('far');
                 icon.classList.add('fas');
-                
+
                 // Show toast notification
-                toast.classList.add('show');
-                
-                // Hide toast after 3 seconds
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3000);
+                if (toast) {
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+                }
             } else {
                 icon.classList.remove('fas');
                 icon.classList.add('far');
@@ -383,41 +385,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
-// this is what i added 
-// Plate rotation on scroll
-const plate = document.querySelector('.plate');
-const chefSection = document.querySelector('.chef-special');
-
-window.addEventListener('scroll', () => {
-    const sectionTop = chefSection.getBoundingClientRect().top;
-    const sectionHeight = chefSection.offsetHeight;
-    const scrollPosition = window.scrollY;
-    
-    if (sectionTop < window.innerHeight && sectionTop > -sectionHeight) {
-        const rotation = (scrollPosition - chefSection.offsetTop) * 0.2;
-        plate.style.transform = `rotateY(${rotation}deg)`;
-    }
-});
-
-// Leaf animations
-const leaves = document.querySelectorAll('.leaf');
-leaves.forEach((leaf, index) => {
-    // Random initial positions
-    const randomX = Math.random() * 100 - 50;
-    const randomY = Math.random() * 100 - 50;
-    const randomRotate = Math.random() * 60 - 30;
-    
-    leaf.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
-    
-    // Animate leaves
-    setInterval(() => {
-        const newX = Math.random() * 40 - 20;
-        const newY = Math.random() * 40 - 20;
-        const newRotate = Math.random() * 30 - 15;
-        
-        leaf.style.transition = 'all 4s ease-in-out';
-        leaf.style.transform = `translate(${newX}px, ${newY}px) rotate(${newRotate}deg)`;
-    }, 4000 + (index * 1000));
-});

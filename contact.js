@@ -16,17 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // FAQ accordion functionality
         faqQuestions.forEach(question => {
             question.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const answer = this.nextElementSibling;
-                answer.classList.toggle('active');
-                
-                // Close other open FAQs
-                faqQuestions.forEach(q => {
-                    if (q !== this && q.classList.contains('active')) {
-                        q.classList.remove('active');
-                        q.nextElementSibling.classList.remove('active');
-                    }
+                const faqItem = this.closest('.faq-item');
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
                 });
+
+                // Toggle current one
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
             });
         });
 

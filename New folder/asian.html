@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian Recipes | Global Gourmet</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-elements">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Global Gourmet</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#" class="active">Asian</a></li>
+                <li><a href="european.html">European</a></li>
+                <li><a href="african.html">African</a></li>
+                <li><a href="american.html">American</a></li>
+                <li><a href="middle-eastern.html">Middle Eastern</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Recipe Hero -->
+    <header class="recipe-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/asian-hero.jpg');">
+        <div class="recipe-hero-content">
+            <h1>Asian Cuisine</h1>
+            <p>Explore the diverse flavors of Asia with our authentic recipes</p>
+        </div>
+    </header>
+
+    <!-- Recipe Grid -->
+    <section class="recipe-grid-section">
+        <div class="section-header">
+            <h2>Popular Asian Recipes</h2>
+            <p>From sushi to curry, discover the tastes of Asia</p>
+        </div>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="all">All</option>
+                    <option value="appetizer">Appetizers</option>
+                    <option value="main">Main Dishes</option>
+                    <option value="dessert">Desserts</option>
+                    <option value="vegetarian">Vegetarian</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="country">Country:</label>
+                <select id="country">
+                    <option value="all">All</option>
+                    <option value="japan">Japan</option>
+                    <option value="china">China</option>
+                    <option value="thailand">Thailand</option>
+                    <option value="india">India</option>
+                    <option value="vietnam">Vietnam</option>
+                    <option value="korea">Korea</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="time">Time:</label>
+                <select id="time">
+                    <option value="all">Any</option>
+                    <option value="30">Under 30 mins</option>
+                    <option value="60">Under 1 hour</option>
+                    <option value="90">Under 1.5 hours</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="recipe-grid">
+            <div class="recipe-card" data-category="main" data-country="japan" data-time="60">
+                <div class="recipe-image">
+                    <img src="../images/ramen.jpg" alt="Ramen">
+                    <div class="recipe-time"><i class="fas fa-clock"></i> 45 mins</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-country">Japan</div>
+                    <h3>Tonkotsu Ramen</h3>
+                    <p>Rich pork broth with noodles, chashu pork, and soft-boiled egg</p>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-utensils"></i> Main Dish</span>
+                        <span><i class="fas fa-fire"></i> Medium</span>
+                    </div>
+                </div>
+                <div class="recipe-overlay">
+                    <button class="btn-recipe">View Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                </div>
+            </div>
+            
+            <div class="recipe-card" data-category="main" data-country="thailand" data-time="30">
+                <div class="recipe-image">
+                    <img src="../images/pad-thai.jpg" alt="Pad Thai">
+                    <div class="recipe-time"><i class="fas fa-clock"></i> 25 mins</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-country">Thailand</div>
+                    <h3>Pad Thai</h3>
+                    <p>Stir-fried rice noodles with eggs, tofu, and tamarind sauce</p>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-utensils"></i> Main Dish</span>
+                        <span><i class="fas fa-fire"></i> Easy</span>
+                    </div>
+                </div>
+                <div class="recipe-overlay">
+                    <button class="btn-recipe">View Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                </div>
+            </div>
+            
+            <div class="recipe-card" data-category="appetizer" data-country="china" data-time="30">
+                <div class="recipe-image">
+                    <img src="../images/dumplings.jpg" alt="Dumplings">
+                    <div class="recipe-time"><i class="fas fa-clock"></i> 30 mins</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-country">China</div>
+                    <h3>Pork Dumplings</h3>
+                    <p>Steamed dumplings with pork and cabbage filling</p>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-utensils"></i> Appetizer</span>
+                        <span><i class="fas fa-fire"></i> Medium</span>
+                    </div>
+                </div>
+                <div class="recipe-overlay">
+                    <button class="btn-recipe">View Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                </div>
+            </div>
+            
+            <div class="recipe-card" data-category="main" data-country="india" data-time="90">
+                <div class="recipe-image">
+                    <img src="../images/butter-chicken.jpg" alt="Butter Chicken">
+                    <div class="recipe-time"><i class="fas fa-clock"></i> 80 mins</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-country">India</div>
+                    <h3>Butter Chicken</h3>
+                    <p>Creamy tomato-based curry with tender chicken</p>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-utensils"></i> Main Dish</span>
+                        <span><i class="fas fa-fire"></i> Medium</span>
+                    </div>
+                </div>
+                <div class="recipe-overlay">
+                    <button class="btn-recipe">View Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                </div>
+            </div>
+            
+            <div class="recipe-card" data-category="vegetarian" data-country="vietnam" data-time="30">
+                <div class="recipe-image">
+                    <img src="../images/pho.jpg" alt="Pho">
+                    <div class="recipe-time"><i class="fas fa-clock"></i> 30 mins</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-country">Vietnam</div>
+                    <h3>Vegetarian Pho</h3>
+                    <p>Aromatic noodle soup with tofu and mushrooms</p>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-utensils"></i> Main Dish</span>
+                        <span><i class="fas fa-fire"></i> Easy</span>
+                    </div>
+                </div>
+                <div class="recipe-overlay">
+                    <button class="btn-recipe">View Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                </div>
+            </div>
+            
+            <div class="recipe-card" data-category="main" data-country="korea" data-time="60">
+                <div class="recipe-image">
+                    <img src="../images/bibimbap.jpg" alt="Bibimbap">
+                    <div class="recipe-time"><i class="fas fa-clock"></i> 50 mins</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-country">Korea</div>
+                    <h3>Bibimbap</h3>
+                    <p>Mixed rice with vegetables, beef, and gochujang sauce</p>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-utensils"></i> Main Dish</span>
+                        <span><i class="fas fa-fire"></i> Medium</span>
+                    </div>
+                </div>
+                <div class="recipe-overlay">
+                    <button class="btn-recipe">View Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                </div>
+            </div>
+            
+            <div class="recipe-card" data-category="appetizer" data-country="japan" data-time="30">
+                <div class="recipe-image">
+                    <img src="../images/sushi.jpg" alt="Sushi">
+                    <div class="recipe-time"><i class="fas fa-clock"></i> 30 mins</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-country">Japan</div>
+                    <h3>California Rolls</h3>
+                    <p>Inside-out sushi rolls with crab, avocado, and cucumber</p>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-utensils"></i> Appetizer</span>
+                        <span><i class="fas fa-fire"></i> Medium</span>
+                    </div>
+                </div>
+                <div class="recipe-overlay">
+                    <button class="btn-recipe">View Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                </div>
+            </div>
+            
+            <div class="recipe-card" data-category="dessert" data-country="china" data-time="60">
+                <div class="recipe-image">
+                    <img src="../images/mooncake.jpg" alt="Mooncake">
+                    <div class="recipe-time"><i class="fas fa-clock"></i> 60 mins</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-country">China</div>
+                    <h3>Mooncakes</h3>
+                    <p>Traditional pastries with sweet lotus seed paste filling</p>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-utensils"></i> Dessert</span>
+                        <span><i class="fas fa-fire"></i> Hard</span>
+                    </div>
+                </div>
+                <div class="recipe-overlay">
+                    <button class="btn-recipe">View Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Modal -->
+    <div class="recipe-modal">
+        <div class="modal-container">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-image">
+                <img src="../images/ramen.jpg" alt="Recipe Image">
+            </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="recipe-tags">
+                        <span class="tag-country">Japan</span>
+                        <span class="tag-category">Main Dish</span>
+                        <span class="tag-time"><i class="fas fa-clock"></i> 45 mins</span>
+                        <span class="tag-difficulty"><i class="fas fa-fire"></i> Medium</span>
+                    </div>
+                    <h2>Tonkotsu Ramen</h2>
+                    <p class="recipe-description">Rich and creamy pork bone broth served with ramen noodles, chashu pork, soft-boiled egg, and various toppings.</p>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="ingredients">
+                        <h3><i class="fas fa-shopping-basket"></i> Ingredients</h3>
+                        <ul>
+                            <li>4 cups pork bones</li>
+                            <li>2 liters water</li>
+                            <li>1 onion, halved</li>
+                            <li>4 garlic cloves</li>
+                            <li>1 inch ginger, sliced</li>
+                            <li>2 packs ramen noodles</li>
+                            <li>200g chashu pork</li>
+                            <li>2 soft-boiled eggs</li>
+                            <li>2 green onions, chopped</li>
+                            <li>Nori seaweed sheets</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3><i class="fas fa-list-ol"></i> Instructions</h3>
+                        <ol>
+                            <li>Blanch pork bones in boiling water for 10 minutes to remove impurities.</li>
+                            <li>Rinse bones and return to pot with fresh water. Simmer for 12 hours.</li>
+                            <li>Add onion, garlic, and ginger after 6 hours of simmering.</li>
+                            <li>Strain broth and season with salt and soy sauce to taste.</li>
+                            <li>Cook ramen noodles according to package instructions.</li>
+                            <li>Assemble bowls with noodles, broth, sliced chashu pork, halved soft-boiled eggs, green onions, and nori.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button class="btn-print"><i class="fas fa-print"></i> Print Recipe</button>
+                    <button class="btn-save"><i class="far fa-bookmark"></i> Save Recipe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>Global Gourmet</span>
+                </div>
+                <p>Bringing the world's flavors to your kitchen since 2023. Our mission is to preserve and share authentic recipes from every culture.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="#">Cooking Tips</a></li>
+                    <li><a href="#">Meal Planner</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Culinary Street, Foodville</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@globalgourmet.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Global Gourmet. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Recipe Filtering
+        const categoryFilter = document.getElementById('category');
+        const countryFilter = document.getElementById('country');
+        const timeFilter = document.getElementById('time');
+        const recipeCards = document.querySelectorAll('.recipe-card');
+        
+        function filterRecipes() {
+            const categoryValue = categoryFilter.value;
+            const countryValue = countryFilter.value;
+            const timeValue = timeFilter.value;
+            
+            recipeCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const cardCountry = card.getAttribute('data-country');
+                const cardTime = parseInt(card.getAttribute('data-time'));
+                
+                const categoryMatch = categoryValue === 'all' || cardCategory === categoryValue;
+                const countryMatch = countryValue === 'all' || cardCountry === countryValue;
+                const timeMatch = timeValue === 'all' || cardTime <= parseInt(timeValue);
+                
+                if (categoryMatch && countryMatch && timeMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        categoryFilter.addEventListener('change', filterRecipes);
+        countryFilter.addEventListener('change', filterRecipes);
+        timeFilter.addEventListener('change', filterRecipes);
+        
+        // Recipe Modal
+        const recipeModal = document.querySelector('.recipe-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const viewRecipeBtns = document.querySelectorAll('.btn-recipe');
+        
+        viewRecipeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                recipeModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', function() {
+            recipeModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        recipeModal.addEventListener('click', function(e) {
+            if (e.target === recipeModal) {
+                recipeModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Save Recipe buttons
+        const saveBtns = document.querySelectorAll('.btn-save');
+        saveBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('saved');
+                this.innerHTML = this.classList.contains('saved') ? 
+                    '<i class="fas fa-bookmark"></i>' : '<i class="far fa-bookmark"></i>';
+                
+                const message = this.classList.contains('saved') ? 
+                    'Recipe saved to your cookbook!' : 'Recipe removed from your cookbook.';
+                alert(message);
+            });
+        });
+    </script>
+</body>
+</html>

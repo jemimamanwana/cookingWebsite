@@ -382,3 +382,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+// this is what i added 
+// Plate rotation on scroll
+const plate = document.querySelector('.plate');
+const chefSection = document.querySelector('.chef-special');
+
+window.addEventListener('scroll', () => {
+    const sectionTop = chefSection.getBoundingClientRect().top;
+    const sectionHeight = chefSection.offsetHeight;
+    const scrollPosition = window.scrollY;
+    
+    if (sectionTop < window.innerHeight && sectionTop > -sectionHeight) {
+        const rotation = (scrollPosition - chefSection.offsetTop) * 0.2;
+        plate.style.transform = `rotateY(${rotation}deg)`;
+    }
+});
+
+// Leaf animations
+const leaves = document.querySelectorAll('.leaf');
+leaves.forEach((leaf, index) => {
+    // Random initial positions
+    const randomX = Math.random() * 100 - 50;
+    const randomY = Math.random() * 100 - 50;
+    const randomRotate = Math.random() * 60 - 30;
+    
+    leaf.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
+    
+    // Animate leaves
+    setInterval(() => {
+        const newX = Math.random() * 40 - 20;
+        const newY = Math.random() * 40 - 20;
+        const newRotate = Math.random() * 30 - 15;
+        
+        leaf.style.transition = 'all 4s ease-in-out';
+        leaf.style.transform = `translate(${newX}px, ${newY}px) rotate(${newRotate}deg)`;
+    }, 4000 + (index * 1000));
+});

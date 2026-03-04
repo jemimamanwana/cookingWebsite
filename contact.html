@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Global Gourmet</title>
+    <title>Contact Us | Cooking with Jay</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+        </div>
+    </div>
+
     <!-- Navigation (same as index.html) -->
     <nav class="navbar">
         <div class="navbar-container">
@@ -109,7 +118,7 @@
     <section class="contact-info-section" id="contact-info">
         <div class="section-header">
             <h2>Our Contact Information</h2>
-            <p>Multiple ways to reach the Global Gourmet team</p>
+            <p>Multiple ways to reach the Cooking with Jay team</p>
         </div>
         
         <div class="contact-info-grid">
@@ -140,7 +149,7 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <h3>Visit Us</h3>
-                <p>Global Gourmet Headquarters</p>
+                <p>Cooking with Jay Headquarters</p>
                 <address>
                     123 Culinary Way<br>
                     Foodie City, FC 10001<br>
@@ -161,7 +170,7 @@
         <div class="faq-container">
             <div class="faq-item">
                 <button class="faq-question">
-                    How can I submit my own recipe to Global Gourmet?
+                    How can I submit my own recipe to Cooking with Jay?
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="faq-answer">
@@ -266,9 +275,39 @@
         </div>
     </section>
 
-    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
     <footer class="footer">
-        <!-- Footer content from index.html -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cooking With Jay</span>
+                </a>
+                <p>Bringing the world's flavors to your kitchen</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="recipes.html">All Recipes</a></li>
+                        <li><a href="cuisines.html">By Cuisine</a></li>
+                        <li><a href="cookbook.html">My Cookbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Cooking With Jay<br>By Jemima Manwana. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Contact Success Modal -->
@@ -279,11 +318,16 @@
                 <i class="fas fa-check-circle"></i>
             </div>
             <h2>Message Sent Successfully!</h2>
-            <p>Thank you for contacting Global Gourmet. We've received your message and will respond within 24-48 hours.</p>
+            <p>Thank you for contacting Cooking with Jay. We've received your message and will respond within 24-48 hours.</p>
             <p>In the meantime, why not explore some <a href="recipes.html">new recipes</a>?</p>
             <button class="btn btn-primary" id="modal-close-btn">Close</button>
         </div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
     <script src="contact.js"></script>

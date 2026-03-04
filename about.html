@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Global Gourmet</title>
+    <title>About Us | Cooking with Jay</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+        </div>
+    </div>
+
     <!-- Navigation (same as index.html) -->
     <nav class="navbar">
         <div class="navbar-container">
@@ -36,7 +45,7 @@
     <header class="about-hero">
         <div class="about-hero-content">
             <h1>Our Culinary Journey</h1>
-            <p>Discover the story behind Global Gourmet and our passion for world flavors</p>
+            <p>Discover the story behind Cooking with Jay and our passion for world flavors</p>
         </div>
         <div class="hero-scroll">
             <span>Scroll Down</span>
@@ -48,7 +57,7 @@
     <section class="our-story">
         <div class="section-header">
             <h2>Our Story</h2>
-            <p>How Global Gourmet came to be</p>
+            <p>How Cooking with Jay came to be</p>
         </div>
         <div class="story-container">
             <div class="story-image">
@@ -57,8 +66,8 @@
             </div>
             <div class="story-content">
                 <h3>From a Home Kitchen to a Global Community</h3>
-                <p>Global Gourmet began in 2015 as a personal blog documenting our founder's culinary adventures while traveling the world. What started as a way to share recipes with friends and family quickly grew into a passionate community of food lovers.</p>
-                <p>After living in 12 different countries and cooking with local chefs and home cooks, we realized that food is the universal language that connects us all. We created Global Gourmet to break down cultural barriers through shared culinary experiences.</p>
+                <p>Cooking with Jay began in 2015 as a personal blog documenting our founder's culinary adventures while traveling the world. What started as a way to share recipes with friends and family quickly grew into a passionate community of food lovers.</p>
+                <p>After living in 12 different countries and cooking with local chefs and home cooks, we realized that food is the universal language that connects us all. We created Cooking with Jay to break down cultural barriers through shared culinary experiences.</p>
                 <div class="story-stats">
                     <div class="stat-item">
                         <span class="stat-number">8</span>
@@ -82,7 +91,7 @@
         <div class="mission-container">
             <div class="mission-content">
                 <h2>Our Mission</h2>
-                <p>At Global Gourmet, we believe that cooking is more than just preparing food—it's a way to explore cultures, create connections, and celebrate diversity.</p>
+                <p>At Cooking with Jay, we believe that cooking is more than just preparing food—it's a way to explore cultures, create connections, and celebrate diversity.</p>
                 <p>We're committed to preserving authentic culinary traditions while making them accessible to home cooks everywhere. Our team tests every recipe to ensure it works in real kitchens with accessible ingredients.</p>
                 <div class="mission-quote">
                     <blockquote>
@@ -107,12 +116,12 @@
     <section class="team-section">
         <div class="section-header">
             <h2>Meet Our Team</h2>
-            <p>The passionate people behind Global Gourmet</p>
+            <p>The passionate people behind Cooking with Jay</p>
         </div>
         <div class="team-grid">
-            <div class="team-member">
+            <div class="team-member ceo-card">
                 <div class="member-image">
-                    <img src="manager.jpg" alt="Maria Rodriguez">
+                    <img src="ChatGPT Image Feb 27, 2026, 08_05_11 AM.png" alt="Jemima Manwana">
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -120,9 +129,9 @@
                     </div>
                 </div>
                 <div class="member-info">
-                    <h3>Maria Rodriguez</h3>
-                    <span class="member-role">Executive Chef</span>
-                    <p>Specializes in Latin American cuisines with 15 years of experience from Mexico to Argentina.</p>
+                    <h3>Jemima Manwana</h3>
+                    <span class="member-role">Chief Executive Officer</span>
+                    <p>A visionary leader with an extraordinary palate and an unshakable passion for bringing the world's flavors to every home.</p>
                 </div>
             </div>
             <div class="team-member">
@@ -241,10 +250,45 @@
         </div>
     </section>
 
-    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
     <footer class="footer">
-        <!-- Footer content from index.html -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cooking With Jay</span>
+                </a>
+                <p>Bringing the world's flavors to your kitchen</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="recipes.html">All Recipes</a></li>
+                        <li><a href="cuisines.html">By Cuisine</a></li>
+                        <li><a href="cookbook.html">My Cookbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Cooking With Jay<br>By Jemima Manwana. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

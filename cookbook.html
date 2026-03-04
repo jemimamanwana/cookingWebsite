@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cookbook | Global Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Cooking with Jay</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="cuisines.html" class="nav-link">Cuisines</a></li>
+                <li class="nav-item"><a href="cookbook.html" class="nav-link active">My Cookbook</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search recipes..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cookbook Header -->
+    <header class="cookbook-header">
+        <div class="cookbook-header-content">
+            <h1>My Cookbook</h1>
+            <p>Your personal collection of favorite recipes from around the world</p>
+            <div class="cookbook-stats">
+                <div class="stat-item">
+                    <i class="fas fa-bookmark"></i>
+                    <span id="recipe-count">12</span> Recipes
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <span id="cuisine-count">7</span> Cuisines
+                </div>
+            </div>
+        </div>
+        <div class="cookbook-header-image">
+            <img src="pancakes.jpg" alt="Cookbook collection">
+        </div>
+    </header>
+
+    <!-- Cookbook Filters -->
+    <section class="cookbook-filters">
+        <div class="filter-group">
+            <label for="cuisine-filter">Filter by Cuisine:</label>
+            <select id="cuisine-filter" class="filter-select">
+                <option value="all">All Cuisines</option>
+                <option value="italian">Italian</option>
+                <option value="mexican">Mexican</option>
+                <option value="asian">Asian</option>
+                <option value="indian">Indian</option>
+                <option value="mediterranean">Mediterranean</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="difficulty-filter">Filter by Difficulty:</label>
+            <select id="difficulty-filter" class="filter-select">
+                <option value="all">All Levels</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="time-filter">Filter by Time:</label>
+            <select id="time-filter" class="filter-select">
+                <option value="all">Any Time</option>
+                <option value="30">Under 30 mins</option>
+                <option value="60">Under 1 hour</option>
+                <option value="90">Under 1.5 hours</option>
+            </select>
+        </div>
+        <button id="clear-filters" class="btn btn-secondary">Clear All</button>
+    </section>
+
+    <!-- Cookbook Recipes -->
+    <section class="cookbook-recipes">
+        <div class="recipe-grid" id="recipe-grid">
+            <!-- Recipes will be dynamically inserted here -->
+        </div>
+        
+        <div class="empty-cookbook" id="empty-cookbook">
+            <div class="empty-content">
+                <i class="fas fa-book-open"></i>
+                <h3>Your Cookbook is Empty</h3>
+                <p>Save recipes from our collection to build your personal cookbook</p>
+                <a href="recipes.html" class="btn btn-primary">Browse Recipes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookbook Categories -->
+    <section class="cookbook-categories">
+        <h2>Organize Your Recipes</h2>
+        <p>Create custom categories to group your saved recipes</p>
+        
+        <div class="categories-grid">
+            <div class="category-card" style="background-image: url('Breakfast.webp')">
+                <div class="category-overlay"></div>
+                <h3>Breakfast</h3>
+                <span class="category-count">5 recipes</span>
+                <button class="category-edit"><i class="fas fa-edit"></i></button>
+            </div>
+            
+            <div class="category-card" style="background-image: url('food.jpg')">
+                <div class="category-overlay"></div>
+                <h3>Dinner</h3>
+                <span class="category-count">4 recipes</span>
+                <button class="category-edit"><i class="fas fa-edit"></i></button>
+            </div>
+            
+            <div class="category-card" style="background-image: url('cake4.webp')">
+                <div class="category-overlay"></div>
+                <h3>Desserts</h3>
+                <span class="category-count">3 recipes</span>
+                <button class="category-edit"><i class="fas fa-edit"></i></button>
+            </div>
+            
+            <div class="category-card add-category">
+                <i class="fas fa-plus"></i>
+                <h3>Add New Category</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <!-- Footer content from index.html -->
+    </footer>
+
+    <!-- Add Recipe Modal -->
+    <div class="modal" id="add-category-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Create New Category</h2>
+            <form id="category-form">
+                <div class="form-group">
+                    <label for="category-name">Category Name</label>
+                    <input type="text" id="category-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Category Image</label>
+                    <div class="image-options">
+                        <div class="image-option selected" data-image="breakfast">
+                            <img src="Breakfast.webp" alt="Breakfast">
+                            <span>Breakfast</span>
+                        </div>
+                        <div class="image-option" data-image="lunch">
+                            <img src="spaggeti.webp" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                        <div class="image-option" data-image="dinner">
+                            <img src="food.jpg" alt="Dinner">
+                            <span>Dinner</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Category</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recipe Detail Modal -->
+    <div class="modal" id="recipe-modal">
+        <div class="modal-content recipe-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-recipe-image" id="modal-recipe-image"></div>
+            <div class="modal-recipe-details">
+                <h2 id="modal-recipe-title">Recipe Title</h2>
+                <div class="modal-recipe-meta">
+                    <span><i class="fas fa-clock"></i> <span id="modal-recipe-time">30 mins</span></span>
+                    <span><i class="fas fa-utensils"></i> <span id="modal-recipe-difficulty">Easy</span></span>
+                    <span><i class="fas fa-globe-americas"></i> <span id="modal-recipe-cuisine">Italian</span></span>
+                </div>
+                <div class="modal-recipe-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(128 reviews)</span>
+                </div>
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="ingredients">Ingredients</button>
+                    <button class="tab-btn" data-tab="instructions">Instructions</button>
+                    <button class="tab-btn" data-tab="notes">My Notes</button>
+                </div>
+                <div class="tab-content active" id="ingredients">
+                    <ul id="modal-recipe-ingredients">
+                        <!-- Ingredients will be added here -->
+                    </ul>
+                </div>
+                <div class="tab-content" id="instructions">
+                    <ol id="modal-recipe-instructions">
+                        <!-- Instructions will be added here -->
+                    </ol>
+                </div>
+                <div class="tab-content" id="notes">
+                    <textarea placeholder="Add your personal notes about this recipe..."></textarea>
+                    <button class="btn btn-primary">Save Notes</button>
+                </div>
+                <div class="modal-recipe-actions">
+                    <button class="btn btn-secondary"><i class="fas fa-print"></i> Print</button>
+                    <button class="btn btn-secondary"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="btn btn-danger"><i class="fas fa-trash-alt"></i> Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="cookbook.js"></script>
+</body>
+</html>
